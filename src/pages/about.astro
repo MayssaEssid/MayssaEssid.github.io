@@ -1,0 +1,105 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="A propos | Mayssa Essid" description="A propos Mayssa Essid ">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="à propos"
+				tagline="Lisez ci-dessous pour en savoir plus sur mon parcours et mes compétences ."
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/at-work.jpg"
+					alt="Jeanine White at work with a colleague"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">En bref</h2>
+				<div class="content">
+					<p>
+						Enthousiaste et passionnée par l'univers du développement web, je suis une développeuse déterminée à concevoir des expériences numériques exceptionnelles. Forte de mes compétences en tant que développeuse full-stack, j'ai acquis une expertise solide dans la conception et la mise en œuvre de solutions innovantes. Mon parcours d'études m'a permis de participer à une diversité de projets, allant de la création d'interfaces utilisateur intuitives à la mise en place d'architectures serveur robustes. Ma passion pour la résolution de problèmes et ma curiosité envers les dernières technologies me poussent à rester constamment à jour et à relever de nouveaux défis. À travers mon portfolio, je vous invite à explorer mes réalisations et à découvrir comment ma créativité et mes compétences techniques peuvent apporter une contribution significative à tout projet de développement web
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Diplômes</h2>
+				<div class="content">
+					<p>Bac+6 Ingénieur en informatique, spécialisé dans le développement web .</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Compétences</h2>
+				<div class="content">
+					<p>Ingénieure en informatique passionnée et méthodique, je suis reconnue pour ma rigueur et mon organisation dans la conception et le développement de solutions web innovantes. Ma créativité alliée à une approche structurée me permettent de relever avec succès des défis complexes, tandis que ma gestion efficace du temps assure des résultats précis et de haute qualité</p>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
